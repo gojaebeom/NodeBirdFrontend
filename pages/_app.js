@@ -10,7 +10,6 @@ const App = ({Component}) => {
                 <meta charSet="utf-8"/>
                 <title>NodeBird</title>
             </Head>
-            <div>공통 매뉴</div>
             <Component/>
         </>
     )
