@@ -3,7 +3,10 @@ import 'antd/dist/antd.css';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-const App = ({Component}) => {
+import wrapper from '../store/configureStore';
+
+//next에서 redux를 자동으로 provider로 감싸주기 때문에 감쌀 필요가 없다.
+const NodeBird = ({Component}) => {
     return (
         <>
             <Head>
@@ -15,8 +18,8 @@ const App = ({Component}) => {
     )
 }
 
-App.propTypes = {
+NodeBird.propTypes = {
     Component : PropTypes.elementType.isRequired,
 }
 
-export default App;
+export default wrapper.withRedux(NodeBird);
